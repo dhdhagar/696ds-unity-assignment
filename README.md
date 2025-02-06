@@ -1,11 +1,11 @@
-# Spring 2024 UMass COMPSCI 696DS Homework 1
-Getting familiar with the shared Unity cluster is the first step in your journey to a succesful project.  
-Knowledge of the proper usage and etiquets is important for avoiding improper usage that many interfere with other cluster users.
+# Spring 2025 UMass COMPSCI 696DS Homework 1
+This assignment is designed to familiarize you with the shared Unity cluster, which is the first step in your journey to a successful project.  
+Knowledge of proper usage and etiquette is important for avoiding actions that interfere with other cluster users.
 
-Please carefully read the following instructions and the linked documentation webpages. Happy 696DS!
+Please carefully read the following instructions and the linked documentation. Happy 696DS!
 
 ## Setup
-0. You should have obtained your Unity account by now. If not please follow the steps on [this page](https://docs.unity.rc.umass.edu/documentation/getting-access/) listed under "Accounts for Students". Your PI is `pi_dhruveshpate_umass_edu`. 
+0. You should have obtained your Unity account by now. If not please follow the steps on [this page](https://docs.unity.rc.umass.edu/documentation/getting-access/) listed under "Accounts for Students". Your PI is `pi_wenlongzhao_umass_edu`. 
 1. Connect to the Unity GPU cluster: https://docs.unity.rc.umass.edu/documentation/connecting/ssh/.
 2. Change to your home directory: `cd ~`. 
 This directory, `/home/<username>`, is on a slow HDD and should have 50GB of space. 
@@ -13,29 +13,29 @@ It is sufficient for this assignment.
 For your project, we will provide separate guidelines about using workspaces on a fast SSD.
 3. Clone this repository and enter it:
     ```
-    git clone https://github.com/dhruvdcoder/696ds-unity-assignment.git
+    git clone https://github.com/dhdhagar/696ds-unity-assignment.git
     cd 696ds-unity-assignment
     ```
-4. Use conda to create an environment for installing relevant packages and libraries for each project. 
-Unity already has conda installed and you can load it by `module load miniconda/22.11.1-1`. 
-    More about conda can be read here: https://docs.unity.rc.umass.edu/documentation/software/conda/.
-5. Create a conda environment for this assignment: 
+4. Use `conda` to create an environment for installing relevant packages and libraries for each project. 
+Unity already has `conda` installed and you can load it by `module load miniconda/22.11.1-1`. 
+    More about `conda` can be read here: https://docs.unity.rc.umass.edu/documentation/software/conda/.
+5. Create a `conda` environment for this assignment: 
 `conda create --name 696hw1 python=3.9.7 pip`. 
 You can replace `696hw1` by your preferred environment name.
-6. Activate the conda environment: `conda activate 696hw1`.
+6. Activate the `conda` environment: `conda activate 696hw1`.
 7. Install packages in this environment: `pip install -r requirements.txt`.
 
 ## Unity job management
-- Unity consists of login nodes and computation nodes and uses [SLURM](https://slurm.schedmd.com/documentation.html) to manage GPU allocation and job scheduling. 
+- Unity consists of *login* nodes and *computation* nodes, and uses [SLURM](https://slurm.schedmd.com/documentation.html) to manage GPU allocation and job scheduling. 
   - Always run jobs (model training, testing, etc.) on computation nodes. 
   **Never run a JOB on a login node!!! This may prevent others from even logging in.**
-- There are in general two ways to access GPUs. 
+- There are, in general, two ways to access GPUs. 
   - (1) Request an interactive session with GPU access. 
   You will be sent to a computation node and will be able to run bash and python scripts. 
   Once you close your terminal, the GPU access is lost. This is suitable for debugging. 
-  - (2) Submit sbatch jobs to run in the background. 
+  - (2) Submit `sbatch` jobs to run in the background.
   Even if you close your terminal, the job will continue till it is complete. 
-  This is suitable for submitting multiple training or evaluation runs that will last for multiple hours.
+  This is suitable for submitting multiple training or evaluation runs that will last for several hours.
 - Please read more details here: https://docs.unity.rc.umass.edu/documentation/jobs/. 
 The linked webpage also has sub-pages.
 
@@ -56,7 +56,7 @@ The linked webpage also has sub-pages.
 3. Paste the two unique IDs in the assignment on Gradescope.
 
 # Extra information
-You can add commands into `~/.bashrc` so that they will be automatically run when you ssh into a node on Unity.
+You can add commands into `~/.bashrc` so that they will automatically run when you `ssh` into a node on Unity.
     ```
     vim ~/.bashrc
     
