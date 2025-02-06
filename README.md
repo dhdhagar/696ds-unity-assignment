@@ -17,7 +17,7 @@ For your project, we will provide separate guidelines about using workspaces on 
     cd 696ds-unity-assignment
     ```
 4. Use `conda` to create an environment for installing relevant packages and libraries for each project. 
-Unity already has `conda` installed and you can load it by `module load miniconda/22.11.1-1`. 
+Unity already has `conda` installed and you can load it by `module load conda/latest`. 
     More about `conda` can be read here: https://docs.unity.rc.umass.edu/documentation/software/conda/.
 5. Create a `conda` environment for this assignment: 
 `conda create --name 696hw1 python=3.9.7 pip`. 
@@ -29,11 +29,11 @@ You can replace `696hw1` by your preferred environment name.
 - Unity consists of *login* nodes and *computation* nodes, and uses [SLURM](https://slurm.schedmd.com/documentation.html) to manage GPU allocation and job scheduling. 
   - Always run jobs (model training, testing, etc.) on computation nodes. 
   **Never run a JOB on a login node!!! This may prevent others from even logging in.**
-- There are, in general, two ways to access GPUs. 
-  - (1) Request an interactive session with GPU access. 
+- There are, in general, two ways to access GPUs: 
+  1. Request an interactive session with GPU access. 
   You will be sent to a computation node and will be able to run bash and python scripts. 
   Once you close your terminal, the GPU access is lost. This is suitable for debugging. 
-  - (2) Submit `sbatch` jobs to run in the background.
+  2. Submit `sbatch` jobs to run in the background.
   Even if you close your terminal, the job will continue till it is complete. 
   This is suitable for submitting multiple training or evaluation runs that will last for several hours.
 - Please read more details here: https://docs.unity.rc.umass.edu/documentation/jobs/. 
@@ -42,11 +42,11 @@ The linked webpage also has sub-pages.
 ## Exercise
 1. Obtain an interactive session with GPU access and run `test/generate_id.py`:
     ```
-    srun  --partition gpu --gres=gpu:1 -c 2 --mem=20GB -t 0-01:00:00 --pty /bin/bash
+    srun --partition gpu --gres=gpu:1 -c 2 --mem=20GB -t 0-01:00:00 --pty /bin/bash
     ```
     followed by
    ```
-    module load miniconda/22.11.1-1
+    module load conda/latest
     conda activate 696hw1
     python test/generate_id.py
     ``` 
@@ -61,7 +61,7 @@ You can add commands into `~/.bashrc` so that they will automatically run when y
     vim ~/.bashrc
     
     # Add this line to avoid manually loading conda.
-    module load miniconda/22.11.1-1
+    module load conda/latest
    
     # Add this line to avoid typing a long name.
     # Instead of cd ~/696ds-unity-assignment, 
