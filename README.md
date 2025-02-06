@@ -56,18 +56,18 @@ The linked webpage also has sub-pages.
 3. Paste the two unique IDs in the assignment on Gradescope.
 
 # Extra information
-You can add commands into `~/.bashrc` so that they will automatically run when you `ssh` into a node on Unity.
-    ```
-    vim ~/.bashrc
-    
-    # Add this line to avoid manually loading conda.
-    module load conda/latest
-   
-    # Add this line to avoid typing a long name.
-    # Instead of cd ~/696ds-unity-assignment, 
-    # you will be able to just type cd $hw1.
-    export hw1=~/696ds-unity-assignment
-    
-    # Make the above changes effective.
-    source ~/.bashrc
-    ```
+You can add commands into `~/.bashrc` so that they will automatically run when you `ssh` into a node on Unity.  
+```
+vim ~/.bashrc
+
+# Add this line to avoid manually loading conda.
+module load conda/latest
+
+# Add this line to avoid typing a long name.
+# Instead of cd ~/696ds-unity-assignment, 
+# you will be able to just type cd $hw1.
+export hw1=~/696ds-unity-assignment
+
+# Make the above changes effective.
+source ~/.bashrc
+```
